@@ -59,4 +59,4 @@
             ?>
         </article>
     </main>
-    <?= include 'footer.php';  
+    <?= include 'footer.php'; ?>

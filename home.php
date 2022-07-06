@@ -10,15 +10,19 @@
     require_once 'src'. DIRECTORY_SEPARATOR .'Classe.php';
     $classe = new Classe ("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
 
+    require_once 'src'. DIRECTORY_SEPARATOR .'Professor.php';
+    $professor = new Professor ("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
+
     include 'header.php'; 
     include 'menu.php';
 ?>    
     <main>
-        <section class="wrapper-lista">
+        <section class="wrapper-lista">           
             <a href="escola.php" class="fill-div">
                 <article id="escola">
                     <?php
-                        $resp_escolas = $escola->qtdade_escolas();                       
+                        $idprofessor = $_SESSION['id'];                    
+                        $resp_escolas = $escola->qtdade_escolas($idprofessor);                       
                     ?>
                     <div  class="resp_qtde">
                         <?php echo "$resp_escolas" ?>
@@ -46,4 +50,4 @@
             </a>
         </section>
     </main>
-    <?= include 'footer.php'; ?>
+    <?=include 'footer.php'; ?>

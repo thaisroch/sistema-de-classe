@@ -49,5 +49,6 @@
             return false; // não conseguiu logar
         }
     }
+
 }
 ?>

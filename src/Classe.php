@@ -17,9 +17,14 @@
         }
         //---------------------------------------------------------------------------------
 
-        public function buscarDadosClasse(){
-            $cmd = $this->pdo->query("SELECT * FROM tbl_classe ORDER BY nome");
+        public function buscarDadosClasse($idprofessor){
             //recebendo o arreio em cmd e convertendo e mandando para variável $res.
+            $res = array();
+            $cmd = $this->pdo->prepare(" SELECT c.id, c.nome, c.periodo, c.fk_tbl_professor_id1, c.fk_tbl_escola_id, c.fk_tbl_disciplina_id FROM tbl_classe AS c INNER JOIN tbl_professor AS p ON c.fk_tbl_professor_id1 = p.id 
+            WHERE c.fk_tbl_professor_id1 = :p");
+            $cmd->bindValue(":p", $idprofessor);
+            $cmd->execute();
+            //recebendo o arreio em cmd e convertendo e mandando para variavel res.
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
