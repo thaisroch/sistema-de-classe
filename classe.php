@@ -12,8 +12,28 @@
     ?>
         <main>
             <h1>Classe</h1>
+            <section class="menu-lateral">
+                <ul class="menu-wrapper">
+                    <li class="menu-icone"><a href="classe-cad.php" class="menu-icone-link">C</a></li>
+                </ul>   
+            </section> 
             <section class="wrapper-lista">
-                <p>Nenhuma classe cadastrada!</p>
-            </section>          
-        </main>
+                <?php
+                    $idprofessor = $_SESSION['id'];
+                    $dados = $classe->buscarDadosClasse($idprofessor);
+                    if (count($dados) > 0) { // verifica se tem pessoa cadastrada no banco
+                    ?>  
+                        <a href="classe.php" class="fill-div">
+                            <article id="classe">                            
+                                <h2>Nome Escola 1</h2>
+                            </article>
+                        </a>
+                    <?php                                
+                    } else {
+                        echo "<p> Nenhuma Escola cadastrada! </p>";
+                    }
+                    ?>
+               
+            </section>
+    </main>
     <?=include 'footer.php'; ?>

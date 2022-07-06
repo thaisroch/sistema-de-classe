@@ -13,4 +13,4 @@
             <p>Nenhuma classe cadastrada!</p>
         </section>           
     </main>           
-    <?=include 'footer.php'; ?> 
+    <?= include 'footer.php'; ?>

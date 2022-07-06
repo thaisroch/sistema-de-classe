@@ -21,7 +21,8 @@
             
             if(!empty($nome) && !empty($email))
             {
-                $escola->atualizarDadosEscola($id_update, $nome, $email);
+                $idprofessor = $_SESSION['id'];
+                $escola->atualizarDadosEscola($id_update, $nome, $email, $idprofessor);
                 header("location: escola.php");
             }
         //---------------------------CADASTRAR----------------------------
@@ -32,7 +33,8 @@
             
             if(!empty($nome) && !empty($email))
             {
-                if(!$escola->cadastrarEscola($nome, $email))
+                $idprofessor = $_SESSION['id'];
+                if(!$escola->cadastrarEscola($nome, $email, $idprofessor))
                 {                             
                     echo "<script language='javascript'>window.alert('Escola já cadastrada com este email!');</script>"; //aviso provisório        
                 }                
@@ -44,7 +46,8 @@
 
     if(isset($_GET['id_up'])){
         $id_update = addslashes($_GET['id_up']);
-        $res = $escola->buscardadosEscola($id_update);
+        $idprofessor = $_SESSION['id'];
+        $res = $escola->buscardadosUmaEscola($id_update, $idprofessor );
     }
 
     include 'header.php'; 
@@ -88,7 +91,8 @@
                     </section>
                     <section id="container-listagemEscola">                                      
                             <?php
-                                $dados = $escola->buscarDados();
+                                $idprofessor = $_SESSION['id'];
+                                $dados = $escola->buscarDados($idprofessor);
                                 if (count($dados) > 0) { // verifica se tem pessoa cadastrada no banco
                                 ?>  
                                     <table id="tabela-listagemEscola">    
@@ -101,7 +105,7 @@
                                     for ($i = 0; $i < count($dados); $i++) {
                                         echo "<tr>";
                                         foreach ($dados[$i] as $k => $v) {
-                                            if ($k != "id") {
+                                            if (($k != "id") and ($k != "fk_tbl_professor_id")) {
                                                 echo "<td>" . $v . "</td>";
                                             }
                                         } //fim do foreach
