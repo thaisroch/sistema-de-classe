@@ -1,4 +1,3 @@
-<!-- Quando a gente colocar require_once no arquivo a gente consegue estanciar essa as classes de desse arquivo com isso ultilizar seus metodos!-->
 <?php
     require_once 'src'. DIRECTORY_SEPARATOR .'Professor.php';
     $professor = new Professor;
@@ -22,7 +21,7 @@
                     <a href="recuperarConta.php">Esqueceu a senha? </a>
                 </form>
                 <?php
-                    // verificar se clicou no botão
+                    // verificar quando clica no botão acessar.
                     if(isset($_POST['email']))
                     {
                         // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
@@ -34,12 +33,12 @@
                             //conectar com o banco
                             $professor->conectar("db_sistemadeclasse","localhost","root","DB_sistema*classe1");
                             if($u->msgErro == ""){
-                            // chamando o método logar e passando os parametros email e senha
+                            // chamando o método logar e passando os parâmetros email e senha.
                                 if($professor->logar($email, $senha)){
                                 //Fazendo login na area privada!
                                     header("location: home.php");
                                 }else{
-                                //mensagem por não encontrar usuario e senha no banco de dados!
+                                //mensagem por não encontrar usuario e senha no banco de dados.
                                 ?>
                                 <div class="resp-erro">
                                     <i class="fa fa-times-circle" aria-hidden="true"></i>
@@ -48,7 +47,7 @@
                                 <?php
                                 }
                             }else{
-                                // mensagem de erro referente a conecção com o banco de dados!
+                                // mensagem de erro referente a conexão com o banco de dados.
                                 ?>
                                     <div class="resp-erro">
                                         <i class="fa fa-times-circle" aria-hidden="true"></i>
@@ -57,6 +56,7 @@
                                 <?php
                             }
                         }else{
+                               // mensagem de erro, os campos não foram  preenchidos.
                             ?>
                                 <div class="resp-erro">
                                     <i class="fa fa-times-circle" aria-hidden="true"></i>

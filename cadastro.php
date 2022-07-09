@@ -1,5 +1,4 @@
 <?php
-    //estanciando a classe 
   
     require_once 'src'. DIRECTORY_SEPARATOR .'Professor.php';
     $professor = new Professor;
@@ -24,7 +23,6 @@
                     <a href="index.php" class="btn-linkado" >Cancelar</a>     
                 </form> 
                 <?php
-                    // verifica se clicou no botão
                     if(isset($_POST['nome']))
                     {
                         // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
