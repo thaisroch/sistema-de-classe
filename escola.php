@@ -35,11 +35,28 @@
             {
                 $idprofessor = $_SESSION['id'];
                 if(!$escola->cadastrarEscola($nome, $email, $idprofessor))
-                {                             
-                    echo "<script language='javascript'>window.alert('Escola já cadastrada com este email!');</script>"; //aviso provisório        
+                {
+                  ?>
+                      <div class="alert showAlert">
+                            <span class="fas fa-exclamation-circle"></span>
+                            <span class="msg">Email já cadastrado!</span>
+                            <span class="close-btn">
+                                <span class="fas fa-times"></span>
+                            </span>
+                        </div>
+                <?php
+                          
                 }                
             }else{
-                echo "<script language='javascript'>window.alert('Preencha todos os campos!');</script>"; //aviso provisório 
+                ?>
+                    <div class="alert showAlert">
+                        <span class="fas fa-exclamation-circle"></span>
+                        <span class="msg">Preencha todos os campos!</span>
+                        <span class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </span>
+                    </div>
+                <?php
             }
         }
     }
@@ -62,11 +79,11 @@
 
                         <form method="POST">   
                             <div class="conteudo-container-cadastroEscola">               
-                                <label for="nome">Nome</label>
+                                <label for="nome">Nome: </label>
                                 <input type="nome" name="nome" id="nome" value="<?php if (isset($res)) { echo $res['nome']; } ?>" >
                             </div>
                             <div class="conteudo-container-cadastroEscola">       
-                                <label for="email">Email</label>
+                                <label for="email">Email: </label>
                                 <input type="email"  name="email" id="email" value="<?php if (isset($res)) { echo $res['email'];} ?> ">
                             </div>
                             <div class="conteudo-container-cadastroEscola">       
@@ -82,17 +99,17 @@
                                 if (count($dados) > 0) { 
                                 ?>  
                                     <table id="tabela-listagemEscola">    
-                                    <tr id="titulo">
-                                        <td>Nome</td>
+                                    <tr id="conteudoLinha">
+                                        <td id="titulo">Nome</td>
                                         <!-- Fazer o campo email ocupar duas colunas!-->
-                                        <td colspan="2">Email</td>
+                                        <td colspan="2" id="titulo">Email</td>
                                     </tr>
                                 <?php
                                     for ($i = 0; $i < count($dados); $i++) {
-                                        echo "<tr>";
+                                        ?><tr id="conteudoLinha"><?php
                                         foreach ($dados[$i] as $k => $v) {
                                             if (($k != "id") and ($k != "fk_tbl_professor_id")) {
-                                                echo "<td>" . $v . "</td>";
+                                               ?> <td id="conteudo"><?php echo $v ;?></td><?php
                                             }
                                         } //fim do foreach
                                 ?>

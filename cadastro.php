@@ -20,13 +20,13 @@
                     <input type="password" name="senha" placeholder="Senha" maxlength="15">
                     <input type="password" name="confSenha" placeholder="Confirmar a senha" maxlength="15">
                     <button type="submit" class="btn" >Cadastrar</button>
-                    <a href="index.php" class="btn-linkado" >Cancelar</a>     
+                    <a href="index.php" class="btn-linkado" >Voltar</a>     
                 </form> 
                 <?php
                     if(isset($_POST['nome']))
                     {
                         // addlashes é uma segurança nos campos do usuario no formulário contra Hackers
-                        $nome = addslashes($_POST ['nome']);
+                        $nome  = addslashes($_POST ['nome']);
                         $email = addslashes( $_POST['email']);
                         $senha = addslashes( $_POST['senha']);
                         $confirmarSenha = addslashes( $_POST['confSenha']);        
