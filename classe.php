@@ -14,7 +14,7 @@
             <h1>Classe</h1>
             <section class="menu-lateral">
                 <ul class="menu-wrapper">
-                    <li class="menu-icone"><a href="classe-cad.php" class="menu-icone-link">C</a></li>
+                    <li class="menu-icone"><a href="classe-cad.php" class="menu-icone-link">+</a></li>
                 </ul>   
             </section> 
             <section class="wrapper-lista">

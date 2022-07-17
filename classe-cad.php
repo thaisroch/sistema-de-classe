@@ -9,66 +9,80 @@
 
     include 'header.php'; 
     include 'menu.php'; 
-    ?>
+    ?>lstat
 
     <main>
         <h1>Classe</h1>
         <section class="wrapper-lista">
         <!-- Início do formulário -->
-            <form>
-
-                <fieldset class="grupo">
+            <form class="formulario-cadastro-classe">
                     
-                    <div class="campo">
-                        <label for="nome"><strong>Nome</strong></label>
-                        <input type="text" name="nome" id="nome" required>
+                    <div class="campoInputClasse" id="campoInputNomeClasse">
+                        <label for="tituloInputNomeClasse" class="tituloInputClasse">Nome</label>
+                        <input type="text" class="InputClasse" name="InputNomeClasse" id="InputNomeClasse" required>
                     </div>
 
                    
-                    <div class="campo">
-                        <label for="ano"><strong>Ano</strong></label>
-                        <input type="text" name="ano" id="ano" required>
+                    <div class="campoInputClasse">
+                        <label for="tituloInputAnoClasse" class="tituloInputClasse">Ano</label>
+                        <input type="number" name="ano" class="InputClasse" id="ano" required>
+                    </div>
+               
+
+                <div class="campoRedioButtonClasse">
+                    <label class="tituloInputClasse">Qual é o periodo?</label>
+                    <label class="tituloInputClasse">
+                        <input type="radio" class="radioButtonClasse" name="classePeriodo" value="manha" checked>Manhã
+                    </label>
+                    <label class="tituloInputClasse">
+                        <input type="radio" class="radioButtonClasse" name="classePeriodo" value="tarde">Tarde
+                    </label>
+                    <label class="tituloInputClasse">
+                        <input type="radio" class="radioButtonClasse" name="classePeriodo" value="noite">Noite
+                    </label>
+                </div>
+                <div class="campoSelectEscolaClasse">
+                    <label class="tituloInputClasse" for="senioridade">Escola</label>
+                    <select id="senioridade" required>
+                    <option  class="tituloInputClasse"selected disabled value=""> -- Selecione -- </option>
+                    <option  class="tituloInputClasse" >Escola1</option>
+                    <option  class="tituloInputClasse">Escola2</option>
+                    <option  class="tituloInputClasse">Escola3</option>
+                    </select>
+                </div>
+
+                
+                <div class="campoSelectDisciplinaClasse">
+                    <label class="tituloInputClasse" for="disciplina">Disciplina</label>
+                    <select id="disciplina" required>
+                    <option  class="tituloInputClasse"selected disabled value="">-- Selecione --</option>
+                    <option  class="tituloInputClasse">História</option>
+                    <option  class="tituloInputClasse">Inglês</option>
+                    <option  class="tituloInputClasse">Matemática</option>
+                    <option  class="tituloInputClasse">-- Adicionar -- </option>
+                    </select>
+                </div>
+                <fieldset class="grupoInputClasse" > 
+
+                    <label for="tituloInputAnoClasse" class="tituloInputClasse">Nome da Disciplina</label>
+                    <input type="text" class="InputClasse" name="InputNomeClasse" id="InputNomeClasse" required>
+                    <div class="boxbtnPequeno">
+                        <button class="btnPequeno" type="submit"  >Adicionar</button>
+                        <a href="classe.php" class="linkBotaoPequeno" >Cancelar</a>
                     </div>
                 </fieldset> 
-
-                <div class="campo">
-                    <label><strong>Qual é o periodo?</strong></label>
-                    <label>
-                        <input type="radio" name="devweb" value="manha" checked>Manhã
-                    </label>
-                    <label>
-                        <input type="radio" name="devweb" value="tarde">Tarde
-                    </label>
-                    <label>
-                        <input type="radio" name="devweb" value="noite">Noite
-                    </label>
+                <div class="boxbtnGrande">
+                    <button class="btn" type="submit"  >Cadastrar</button>
+                    <a href="classe.php" class="linkBotao" >Cancelar</a>
                 </div>
-                <div class="campo">
-                    <label for="senioridade"><strong>Escola</strong></label>
-                    <select id="senioridade" required>
-                    <option selected disabled value=""> -- Selecione -- </option>
-                    <option>Escola1</option>
-                    <option>Escola2</option>
-                    <option>Escola3</option>
-                    </select>
-                </div>
-
-                
-                <div class="campo">
-                    <label for="disciplina"><strong>Disciplina</strong></label>
-                    <select id="disciplina" required>
-                    <option selected disabled value="">-- Selecione --</option>
-                    <option>História</option>
-                    <option>Inglês</option>
-                    <option>Matemática</option>
-                    <option>-- Adicionar -- </option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="btn" >Cadastrar</button>
-                <a href="classe.php" class="btn-linkado">Cancelar</a>
                          
             </form>
         </section>
     </main>
     <?=include 'footer.php'; ?>
+
+
+
+
+
+
