@@ -1,0 +1,170 @@
+
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}  
+
+#container-cadastroEscola{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.133);
+    height: 10em;
+    border-radius: 3px 0 0 0;
+}
+.conteudo-container-cadastroEscola{
+    height: 3em;
+    text-align:end;
+    justify-content: end;
+ 
+}      
+.btn-linkado{
+    text-decoration: none; 
+    border: 2px solid var(--cor2);
+    height: 2em;
+    width: 10em;
+    border-radius:.3em ;
+    font-size: 1.2em;
+    font-family: var(--fonte-padrao);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btn-linkado:hover{
+    text-decoration: none;
+    border-width:2px;
+    background-color: var(--cor2);
+    color: #fff;
+    font-family: var(--fonte-padrao);
+    text-transform: uppercase;   
+    cursor: pointer;
+}
+
+.conteudo-container-cadastroEscola > label{
+    font-size: 1.2rem;  
+    color: var(--cor2);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 2px 5px 15px rgba(0, 0, 0, 0.46);
+
+ 
+ }
+ 
+ .conteudo-container-cadastroEscola #nome, #email{
+    height: 1.8em;
+    font-size: 1rem;  
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.082);
+    border:none;
+    padding-left: 3px;
+    box-shadow: 2px 3px 3px 1px rgba(0, 0, 0, 0.171);
+}
+#container-listagemEscola{
+    padding-top: 4em;
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height: 50em;
+    max-height: auto;  
+}
+
+#tabela-listagemEscola{ /** Faz o estilo da tabela inteira. **/
+    font-family:var(--fonte-padrao);
+    min-width: 4em;
+    width: auto;
+    height: auto;
+    border-style:groove;/** Define a borda pontilhada. **/
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.133);
+ }
+
+#tabela-listagemEscola #titulo{/** Faz o estilo para as células do cabeçalho. **/
+    background:var(--cor2); /** Muda para um fundo cinza. **/
+    height: 2.5em;
+    text-align:center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family:var(--fonte-padrao);
+    text-transform: uppercase;
+ }
+ #tabela-listagemEscola #conteudo {
+    height: 2em;
+    text-align:left;
+    padding:1.5em ;
+    
+ }
+
+#tabela-listagemEscola #conteudoLinha:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+    background-color: #4b7dbf31;
+}
+#tabela-listagemEscola td #editar {
+   text-decoration: none;
+   background-color: #003049;
+   color: white;
+   padding: .5em;
+   border-radius:1em;
+   text-align:right;
+
+}
+#tabela-listagemEscola td #excluir {
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.848);
+    color: white;
+    padding: .5em;
+    border-radius:1em;
+    text-align:right;
+ }
+
+ textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+@media screen and (max-width: 670px) {
+    #tabela-listagemEscola #conteudoLinha:hover{
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+        background-color: #002f490c;
+    }
+    #tabela-listagemEscola #titulo{
+        padding: .5em;
+        height: auto;
+        min-height:4em;
+        font-size: .9em;
+        text-align:left;
+     }
+    #tabela-listagemEscola #conteudo{
+       padding: .5em;
+       height: auto;
+       min-height:4em;
+
+    }
+    #tabela-listagemEscola td #editar {      
+        padding: .4em;
+        border-radius:1em;
+        font-size: 12px;
+        justify-items: end;
+      
+    }  
+    #tabela-listagemEscola td #excluir {      
+        padding: .3em;
+        border-radius:1em;
+        font-size: 12px;
+        margin-bottom: .1em;
+        text-align: right;
+    }
+}

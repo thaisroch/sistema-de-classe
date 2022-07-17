@@ -1,0 +1,133 @@
+
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}   
+
+/*  menu */
+nav{
+    top: 2.5rem;
+    position: fixed;
+    padding-top: 1em;
+    width: 4.2em;
+    left: 0;
+    height:calc(100vh - 3em);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+    background-color: #fff;
+}
+.respansivo-menu{
+    margin-top:3.5em;
+    margin-left: 1.5em;
+}
+#check{
+    display: none;
+}
+/*Menu hamburguer*/
+.respansivo-menu .btn-one i{  
+    font-size: 1.5em;
+    font-weight: 700;
+    opacity: 1;
+    left: 1em;
+    transform: all 0.3s linear;
+    top: 2.5em;
+    position: fixed; 
+    z-index: 11000;
+    color: var(--cor5);
+}
+/*Menu Botão de fechar*/
+nav .btn-two i{ 
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-left: 8em;
+    opacity: 0;
+    cursor: pointer;
+    transform: all 0.3s linear;
+    margin-bottom: .8em;
+    color: var(--cor5);
+}
+/*Metodo quando está clicando sobre o hamberguer*/
+#check:checked ~ .btn-one i{
+    display: none;
+}
+#check:checked ~ nav .btn-two i{
+    opacity: 1;
+}
+#check:checked ~ nav{
+    width: 14rem;
+    z-index: 1000;
+}
+#check:checked ~ nav .menu-icone:hover{
+    background-color: var(--cor5);
+}
+#check:checked ~ nav .menu-icone-link{
+    margin-left: 3px;
+    background-color: #fff;
+}
+#check:checked ~ nav .menu-link{
+    opacity:1;
+    padding: 10px 2px;
+    font-size: 20px;
+    width: calc( 14rem - 3em);
+    display: flex;
+    color: var(--cor5);
+    font-family: var(--fonte-padrao);
+    background-color: #fff;
+}
+/*backgroud do menu (UL)*/
+.menu{
+    margin-top: .5em;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+}
+/*backgroud do menu icones (LI)*/
+.menu-icone{
+ /*tamanhanho do menu icones*/
+    height: 3em; /*tamanhanho do menu icones*/
+    display: flex;
+    margin-bottom: 2px;
+}
+/*conectando o link com o icone*/
+.menu-icone .menu-icone-link{
+    display: flex;
+    width: 4.2em;
+    color: var(--cor5);
+    background-color: #fff;
+
+}
+.menu-icone > .menu-icone-link > i{
+    width: 4.2em;
+    display: flex;
+    font-size: 1.5em;
+    transition: background-color 1s;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.menu-link{
+    display: none;
+}
+.menu-icone-link:hover{
+    background-color: #fff;
+    margin-left: 3px;
+    width: 4em;
+}
+.menu-icone:hover, .menu-icone:active{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+    background-color: var(--cor5);
+}

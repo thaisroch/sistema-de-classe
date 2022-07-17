@@ -1,0 +1,102 @@
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}  
+
+.formulario-cadastro-classe{
+ 
+    padding: 1.5em 2em 1em 1em;
+    width: 30em;
+    display: wrap;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+
+}
+
+.campoInputClasse{
+  
+    display: flex;
+    justify-content:first baseline;
+    margin-bottom: .8em;
+    height: auto;
+    min-height: 2em;
+
+
+}
+
+.tituloInputClasse{
+    width: auto ;
+    min-width: 2em;
+    padding: .2em;
+    font-size: 1.6em;
+    font-family: var(--fonte-padrao);
+    color: var(--cor5);
+}
+
+.InputClasse{
+    width: 17em;
+    font-size: 1.5em;
+    padding: 4px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+}
+
+.campoRedioButtonClasse{
+    display: flex;
+    flex-direction:column;
+    margin-bottom: .8em;
+    height: auto;
+    min-height: 2em;
+
+}
+
+.radioButtonClasse{
+    padding: 1em;
+    margin-right:1em ;
+}
+
+.campoSelectDisciplinaClasse{
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+.grupoInputClasse{
+    padding: 1em;
+    margin-top: .8em;
+    border: none;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.295);
+    display: none;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

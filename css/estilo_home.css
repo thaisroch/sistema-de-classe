@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}   
+
+/* Os  indicadores de quantidade da na home de acesso facil da informação*/
+article{
+    display: block;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+    text-align: center;
+    border-radius: .2em;  
+    color: var(--cor1);
+    font-family: var(--fonte-padrao);
+    justify-content: space-evenly;
+}
+/* fill-div e o nome da classe que está contido o link de acessos de indicadores de quantidade da na home*/
+.fill-div {
+    border-radius: .2em; 
+    margin: 1rem;
+    display: block;
+    width: 13rem;
+    height: 8rem;
+    background-color: rgba(0, 0, 0, 0.603);
+} 
+.fill-div:hover{
+   opacity: .9;
+   border: .2em solid var(--cor5);
+   border-radius: .2em;
+   margin:.8em;
+}
+.fill-div #escola{
+    background-color: var(--cor4);
+}
+.fill-div #classe{
+    background-color: var(--cor3);
+}
+.fill-div #aluno{
+    background-color:var(--cor6);
+}
+.fill-div #relatorio{
+    background-color: var(--cor0);
+}
+/* Titulos das caixa de acesso facil da informação*/
+h2{
+    padding: .5em;
+    margin: 1px auto 0 auto;
+}
+/* resposta das quantidades de registro de cada Caixa de acesso facil da informação*/
+.resp_qtde{
+	margin: 2px;
+	text-align:center;
+	font-size: 2.5em;
+}   
+
+
