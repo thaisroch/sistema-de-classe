@@ -10,7 +10,7 @@
 
 
     
-    if(isset($_POST['nome'])){ // clicou no botão para cadastrar ou editar
+    if(isset($_POST['nome'])){ // Ao clicar no botão para cadastrar ou editar
         
         //------------------------EDITAR ------------------------------
         if(isset($_GET['id_up']) && !empty($_GET['id_up']))
@@ -35,11 +35,28 @@
             {
                 $idprofessor = $_SESSION['id'];
                 if(!$escola->cadastrarEscola($nome, $email, $idprofessor))
-                {                             
-                    echo "<script language='javascript'>window.alert('Escola já cadastrada com este email!');</script>"; //aviso provisório        
+                {
+                  ?>
+                      <div class="alert showAlert">
+                            <span class="fas fa-exclamation-circle"></span>
+                            <span class="msg">Email já cadastrado!</span>
+                            <span class="close-btn">
+                                <span class="fas fa-times"></span>
+                            </span>
+                        </div>
+                <?php
+                          
                 }                
             }else{
-                echo "<script language='javascript'>window.alert('Preencha todos os campos!');</script>"; //aviso provisório 
+                ?>
+                    <div class="alert showAlert">
+                        <span class="fas fa-exclamation-circle"></span>
+                        <span class="msg">Preencha todos os campos!</span>
+                        <span class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </span>
+                    </div>
+                <?php
             }
         }
     }
@@ -47,7 +64,7 @@
     if(isset($_GET['id_up'])){
         $id_update = addslashes($_GET['id_up']);
         $idprofessor = $_SESSION['id'];
-        $res = $escola->buscardadosUmaEscola($id_update, $idprofessor );
+        $res = $escola->buscardadosUmaEscola($id_update, $idprofessor);
     }
 
     include 'header.php'; 
@@ -56,36 +73,21 @@
         <main>
             <h1>Escolas</h1>
             <section class="wrapper-lista">
-                <!--Chamando o conteudo-escola-->
+                <!--Verificando o conteúdo cadastrado na tbl_escola -->
                 <div class="container-main">
                     <section id="container-cadastroEscola">
+
                         <form method="POST">   
                             <div class="conteudo-container-cadastroEscola">               
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome" value=" 
-                                    <?php 
-                                        if (isset($res)) {
-                                            echo $res['nome'];
-                                        } 
-                                    ?>
-                                ">
+                                <label for="nome">Nome: </label>
+                                <input type="nome" name="nome" id="nome" value="<?php if (isset($res)) { echo $res['nome']; } ?>" >
                             </div>
                             <div class="conteudo-container-cadastroEscola">       
-                                <label for="email">Email</label>
-                                <input type="email"  name="email" id="email"  value="
-                                    <?php 
-                                        if (isset($res)) {
-                                            echo $res['email'];
-                                        } 
-                                    ?> 
-                                ">
+                                <label for="email">Email: </label>
+                                <input type="email"  name="email" id="email" value="<?php if (isset($res)) { echo $res['email'];} ?> ">
                             </div>
                             <div class="conteudo-container-cadastroEscola">       
-                                <input class="btn-linkado" type="submit" value="<?php if (isset($res)) {
-                                                                echo "Atualizar";
-                                                            } else {
-                                                                echo "Cadastrar";
-                                                            } ?>">
+                                <input class="btn-linkado" type="submit" value="<?php if (isset($res)) { echo "Atualizar"; } else { echo "Cadastrar";} ?>">
                             </div>
                         </form>
                     </section>
@@ -93,26 +95,28 @@
                             <?php
                                 $idprofessor = $_SESSION['id'];
                                 $dados = $escola->buscarDados($idprofessor);
-                                if (count($dados) > 0) { // verifica se tem pessoa cadastrada no banco
+                                // verifica se tem escola cadastrada no banco
+                                if (count($dados) > 0) { 
                                 ?>  
                                     <table id="tabela-listagemEscola">    
-                                    <tr id="titulo">
-                                        <td>Nome</td>
+                                    <tr id="conteudoLinha">
+                                        <td id="titulo">Nome</td>
                                         <!-- Fazer o campo email ocupar duas colunas!-->
-                                        <td colspan="2">Email</td>
+                                        <td colspan="2" id="titulo">Email</td>
                                     </tr>
                                 <?php
                                     for ($i = 0; $i < count($dados); $i++) {
-                                        echo "<tr>";
+                                        ?><tr id="conteudoLinha"><?php
                                         foreach ($dados[$i] as $k => $v) {
                                             if (($k != "id") and ($k != "fk_tbl_professor_id")) {
-                                                echo "<td>" . $v . "</td>";
+                                               ?> <td id="conteudo"><?php echo $v ;?></td><?php
                                             }
                                         } //fim do foreach
                                 ?>
-                                    <!-- Botões de editar e excluir por linha -->
+                                    <!-- Botões de editar e excluir por id -->
                                     <td>
-                                        <a class="link-tabela-listagemEscola" id="editar" href="escola.php?id_up=<?php echo $dados[$i]['id'];?>">Editar</a>                                    <a class="link-tabela-listagemEscola" id="excluir" href="escola.php?id=<?php echo $dados[$i]['id'];?>">Excluir</a>
+                                        <a class="link-tabela-listagemEscola" id="editar" href="escola.php?id_up=<?php echo $dados[$i]['id'];?>">Editar</a> 
+                                        <a class="link-tabela-listagemEscola" id="excluir" href="escola.php?id_ex=<?php echo $dados[$i]['id'];?>">Excluir</a>
                                     </td>
                                 <?php
                                     echo "</tr>";
@@ -127,10 +131,12 @@
             </section>      
         </main>
         <?php
-            if(isset($_GET['id'])){
-                $id_escola = addslashes($_GET['id']);
+            // Excluir uma escola
+            if(isset($_GET['id_ex'])){
+                $idprofessor = $_SESSION['id'];
+                $id_escola = addslashes($_GET['id_ex']);
                 echo "<script language='javascript'>window.location.href='escola.php';</script>";
-                $escola->excluirEscola($id_escola);     
+                $escola->excluirEscola($id_escola, $idprofessor);     
             }
         ?>
     <?= include 'footer.php'; ?>

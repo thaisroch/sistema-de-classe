@@ -1,0 +1,63 @@
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}   
+
+/*Configuração do loading*/
+#loading{
+    width: 99vw;
+    height: 97vh;
+    background-color: #fff;
+    padding-top: 10em;
+}
+#loading> h1{
+    margin-bottom: 2.5em;
+    text-align:center;
+    color: var(--cor5);
+    font-size: 2.5em;
+    font-family: var(--fonte-destaque);
+    font-weight: 500;
+}
+#loading .load{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#loading .load > div{
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(var(--cor0), var(--cor4));
+    margin: 15px;
+    border-radius: 50%;
+    animation: anima 1s ease-in-out infinite alternate;
+}
+#loading .load div:nth-child(1){
+    animation-delay: -0.4s;
+}
+#loading .load div:nth-child(2){
+    animation-delay: -0.2s;
+}
+/*Animação */
+@keyframes anima{
+    from{
+        transform: translateY(-100%);
+    }to{
+        transform: translateY(100%);
+    }
+}

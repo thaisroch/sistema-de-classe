@@ -21,7 +21,8 @@
                 <?php
                     $idprofessor = $_SESSION['id'];
                     $dados = $classe->buscarDadosClasse($idprofessor);
-                    if (count($dados) > 0) { // verifica se tem pessoa cadastrada no banco
+                     // verifica se tem classe cadastrada na tbl_classe
+                    if (count($dados) > 0) {
                     ?>  
                         <a href="classe.php" class="fill-div">
                             <article id="classe">                            

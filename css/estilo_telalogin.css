@@ -174,13 +174,4 @@ div#resp-sucesso{
     color: var(--cor1);
     font-family: var(--fonte-padrao);
 }
-/*Rodapé*/
-footer{
-    color: var(--cor4);
-    background-color: var(--cor5);
-    height: 1em;
-    width: 100%;
-    text-align: center;
-    padding: .5em;
-    font-size: 15px;
-}
+

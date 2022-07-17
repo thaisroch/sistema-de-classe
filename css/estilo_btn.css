@@ -1,0 +1,129 @@
+@charset "utf-8";
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+/*Icones*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+:root {
+    --cor0: #F26457;
+    --cor1: #F2F2F2;
+    --cor6: #F2BE7E; /*chocolate*/
+    --cor3: #54BFA1;
+    --cor4: #4B7DBF;
+    --cor5: #003049; /*header, footer, menu-icone, menu-link, humbuguer, fechar*/
+    --cor2: #d2691e; /*chocolate*/
+
+    --fonte-padrao: 'Inconsolata', monospace;
+    --fonte-destaque:'Bebas Neue', cursive;
+}  
+
+.boxbtnPequeno{
+    width: 12em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.btnPequeno{
+    height: 2.3em;
+    min-width: 7em;
+    width: auto;
+    padding: .6em .6em;     
+    background-color: var(--cor2);
+    border: none;
+    color: var(--cor1);
+    cursor: pointer; 
+    margin-bottom: .9em;
+    font-size: .8rem;  
+    font-family: var(--fonte-padrao);  /*Tenho que configurar uma fonte*/
+    border-radius: .2rem;
+    text-transform: uppercase;
+    margin-top: 1em;
+
+}
+
+.linkBotaoPequeno{
+    margin-top: 1em;
+    height: 1.2em;
+    min-width: 6em;        
+    padding: .5em .5em;
+    border: 1px solid var(--cor2);  
+    color: var(--cor2);
+    border-radius: .2rem;
+    text-transform: uppercase;
+    text-decoration: none;  
+    font-size: .8rem;
+    margin-bottom: 1em;
+    font-family: var(--fonte-padrao);
+    cursor: pointer; 
+    text-align: center;
+    justify-content: center;
+    
+}
+.linkBotaoPequeno:hover{
+    text-decoration: underline;
+    border-width:2px;
+    height: 1em;  /*Tirei um 1em da tela para não ficar se movimentando o contei7/ne*/
+}
+    
+.boxbtnGrande{
+
+}
+
+
+.btn{
+    height: 2.2em;
+    min-width: 8em;
+    width: auto;
+    padding: .5em .5em;     
+    background-color: var(--cor2);
+    border: none;
+    color: var(--cor1);
+    cursor: pointer; 
+    margin-bottom: .8em;
+    font-size: 1.2rem;  
+    font-family: var(--fonte-padrao);  /*Tenho que configurar uma fonte*/
+    border-radius: .2rem;
+    text-transform: uppercase;
+    margin-top: 2em;
+
+}
+
+
+.linkBotao{
+    margin-top: 1em;
+    height: 2.2em;
+    min-width: 12em;        
+    padding: .5em 2em;
+    border: 1px solid var(--cor2);  
+    color: var(--cor2);
+    border-radius: .2rem;
+    text-transform: uppercase;
+    text-decoration: none;  
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+    font-family: var(--fonte-padrao);
+    cursor: pointer; 
+
+}
+.linkBotao:hover{
+    text-decoration: underline;
+    border-width:2px;
+    height: 2.1em;  /*Tirei um 1em da tela para não ficar se movimentando o conteine*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
